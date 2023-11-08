@@ -12,8 +12,8 @@ function changeFont(url: string) {
   let style = `<style>
 @font-face {
 font-family: "Virgil";
-src:
-url("${url}")
+src: url("${url}");
+unicode-range: U+AC00-D7A3;
 format("woff2");
 }
 </style>`
