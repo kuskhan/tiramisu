@@ -16,13 +16,29 @@ export const getStyle = () => {
 
 const PlasmoOverlay = () => {
   useEffect(() => {
-    const fontUrlKo = chrome.runtime.getURL("fonts/nanum-pretty-mk.ttf")
-    const fontUrlJp = chrome.runtime.getURL("fonts/KazuFont.ttf")
-    document.head.insertAdjacentHTML(
-      "beforeend",
-      getStyleText({ urlKo: fontUrlKo, urlJp: fontUrlJp })
+    chrome.storage.local.get(["switch"]).then((result) => {
+      if (result.switch) {
+        const fontUrlKo = chrome.runtime.getURL("fonts/nanum-pretty-mk.ttf")
+        const fontUrlJp = chrome.runtime.getURL("fonts/KazuFont.ttf")
+        document.head.insertAdjacentHTML(
+          "beforeend",
+          getStyleText({ urlKo: fontUrlKo, urlJp: fontUrlJp })
+        )
+      }
+    })
+  }, [])
+
+  useEffect(() => {
+    chrome.runtime.onMessage.addListener(
+      function (request, sender, sendMessage) {
+        if (request.message === "refresh") {
+          window.location.reload()
+        }
+      }
     )
   }, [])
+
+  useEffect(() => {}, [])
   return <></>
 }
 

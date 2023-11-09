@@ -3,7 +3,7 @@ import "~font.css"
 
 import * as process from "process"
 import kpay from "data-base64:~assets/kakao_pay.png"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import GrayLogoButton from "~components/GrayLogoButton"
 import PulseLogoButton from "~components/PulseLogoButton"
@@ -11,9 +11,21 @@ import PulseLogoButton from "~components/PulseLogoButton"
 function IndexPopup() {
   const [buttonState, setButtonState] = useState(false)
   const [showQR, setShowQR] = useState(false)
-  const toggleHandler = () => {
+  const toggleHandler = async () => {
     setButtonState(!buttonState)
+    await chrome.storage.local.set({ switch: !buttonState })
+    const [tab] = await chrome.tabs.query({
+      active: true,
+      lastFocusedWindow: true
+    })
+    await chrome.tabs.sendMessage(tab.id, { message: "refresh" })
   }
+
+  useEffect(() => {
+    chrome.storage.local.get(["switch"]).then((result) => {
+      setButtonState(result.switch)
+    })
+  }, [])
 
   const manifestData = chrome.runtime.getManifest()
   return (
