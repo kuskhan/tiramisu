@@ -4,7 +4,7 @@
 
 ## Fonts
 - English: default [Virgil](https://virgil.excalidraw.com/) font from [excalidraw.com](https://excalidraw.com/)
-- Korean: [나눔손글씨 예쁜 민경체 / Namum Ye Bbeun Min Gyeong Ce](https://clova.ai/handwriting/)
+- Korean: [상상토키 금면성실 / SSFaithfulness](https://sangsangfont.com/21/?idx=162)
 - Japanese: [かずフォント / Kazu font](https://www.freejapanesefont.com/kazu-handwriting-font-download/)
 
 ## Powered by

@@ -33,9 +33,9 @@
     "web_accessible_resources": [
       {
         "resources": [
-          "fonts/nanum-pretty-mk.ttf",
           "fonts/KazuFont.ttf",
-          "fonts/Virgil.woff2"
+          "fonts/Virgil.woff2",
+          "fonts/SSFaithfulness.ttf"
         ],
         "matches": [
           "https://*/*"
