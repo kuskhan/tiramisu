@@ -1,10 +1,11 @@
 import cssText from "data-text:~style.css"
 import type { PlasmoCSConfig } from "plasmo"
+import { useEffect } from "react"
 
-import { CountButton } from "~features/count-button"
+import { getStyleText } from "~lib/styleLib"
 
 export const config: PlasmoCSConfig = {
-  matches: ["https://www.plasmo.com/*", "https://excalidraw.com/*"]
+  matches: ["https://excalidraw.com/*"]
 }
 
 export const getStyle = () => {
@@ -14,11 +15,15 @@ export const getStyle = () => {
 }
 
 const PlasmoOverlay = () => {
-  return (
-    <div className="z-50 flex fixed top-32 right-8">
-      <CountButton />
-    </div>
-  )
+  useEffect(() => {
+    const fontUrlKo = chrome.runtime.getURL("fonts/nanum-pretty-mk.ttf")
+    const fontUrlJp = chrome.runtime.getURL("fonts/KazuFont.ttf")
+    document.head.insertAdjacentHTML(
+      "beforeend",
+      getStyleText({ urlKo: fontUrlKo, urlJp: fontUrlJp })
+    )
+  }, [])
+  return <></>
 }
 
 export default PlasmoOverlay

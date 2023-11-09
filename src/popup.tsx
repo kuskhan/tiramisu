@@ -8,36 +8,36 @@ async function getCurrentTab() {
   return tab
 }
 
-function changeFont(url: string) {
-  let style = `<style>
-@font-face {
-font-family: "Virgil";
-src: url("${url}");
-unicode-range: U+AC00-D7A3;
-format("woff2");
-}
-</style>`
-
-  document.head.insertAdjacentHTML("beforeend", style)
-}
+// function changeFont(url: string) {
+//   let style = `<style>
+// @font-face {
+// font-family: "Virgil";
+// src: url("${url}");
+// unicode-range: U+AC00-D7A3;
+// format("woff2");
+// }
+// </style>`
+//
+//   document.head.insertAdjacentHTML("beforeend", style)
+// }
 
 function IndexPopup() {
-  useEffect(() => {
-    const injectScript = async () => {
-      const tab = await getCurrentTab()
-      const url = chrome.runtime.getURL("fonts/nanum-pretty-mk.ttf")
-      await chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        func: changeFont,
-        args: [url]
-      })
-
-      return tab.id
-    }
-    injectScript().then((data) => {
-      console.log("Injected:", data)
-    })
-  }, [])
+  // useEffect(() => {
+  //   const injectScript = async () => {
+  //     const tab = await getCurrentTab()
+  //     const url = chrome.runtime.getURL("fonts/nanum-pretty-mk.ttf")
+  //     await chrome.scripting.executeScript({
+  //       target: { tabId: tab.id },
+  //       func: changeFont,
+  //       args: [url]
+  //     })
+  //
+  //     return tab.id
+  //   }
+  //   injectScript().then((data) => {
+  //     console.log("Injected:", data)
+  //   })
+  // }, [])
   return (
     // <div className="plasmo-flex plasmo-items-center plasmo-justify-center plasmo-h-16 plasmo-w-40">
     //   <CountButton />
