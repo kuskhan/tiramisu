@@ -39,10 +39,10 @@ function IndexPopup() {
             <GrayLogoButton onClick={toggleHandler} />
           )}
         </div>
-        <div className="flex flex-row justify-between w-full text-sm items-center">
+        <div className="flex flex-row justify-between w-full text-xs items-center">
           <p>kuskhan@gmail.com</p>
           <button
-            className="bg-stone-400 px-3 py-1 rounded-xl text-slate-50 shadow-md"
+            className="bg-stone-400 px-4 py-1 rounded-xl text-slate-50 shadow-md text-xs"
             onClick={() => setShowQR(true)}>
             Buy Me a Tiramisu
           </button>
