@@ -34,7 +34,8 @@
       {
         "resources": [
           "fonts/nanum-pretty-mk.ttf",
-          "fonts/KazuFont.ttf"
+          "fonts/KazuFont.ttf",
+          "fonts/Virgil.woff2"
         ],
         "matches": [
           "https://*/*"

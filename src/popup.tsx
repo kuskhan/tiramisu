@@ -1,49 +1,65 @@
 import "~style.css"
+import "~font.css"
 
-import { useEffect } from "react"
+import * as process from "process"
+import kpay from "data-base64:~assets/kakao_pay.png"
+import { useState } from "react"
 
-async function getCurrentTab() {
-  const queryOptions = { active: true, currentWindow: true }
-  const [tab] = await chrome.tabs.query(queryOptions)
-  return tab
-}
-
-// function changeFont(url: string) {
-//   let style = `<style>
-// @font-face {
-// font-family: "Virgil";
-// src: url("${url}");
-// unicode-range: U+AC00-D7A3;
-// format("woff2");
-// }
-// </style>`
-//
-//   document.head.insertAdjacentHTML("beforeend", style)
-// }
+import GrayLogoButton from "~components/GrayLogoButton"
+import PulseLogoButton from "~components/PulseLogoButton"
 
 function IndexPopup() {
-  // useEffect(() => {
-  //   const injectScript = async () => {
-  //     const tab = await getCurrentTab()
-  //     const url = chrome.runtime.getURL("fonts/nanum-pretty-mk.ttf")
-  //     await chrome.scripting.executeScript({
-  //       target: { tabId: tab.id },
-  //       func: changeFont,
-  //       args: [url]
-  //     })
-  //
-  //     return tab.id
-  //   }
-  //   injectScript().then((data) => {
-  //     console.log("Injected:", data)
-  //   })
-  // }, [])
+  const [buttonState, setButtonState] = useState(false)
+  const [showQR, setShowQR] = useState(false)
+  const toggleHandler = () => {
+    setButtonState(!buttonState)
+  }
+
+  const manifestData = chrome.runtime.getManifest()
   return (
-    // <div className="plasmo-flex plasmo-items-center plasmo-justify-center plasmo-h-16 plasmo-w-40">
-    //   <CountButton />
-    // </div>
-    <div className="w-80 h-48">
-      <p className="text-2xl">Tiramisu</p>
+    <div
+      className="w-80 h-72 p-4 bg-stone-200 text-stone-900"
+      style={{ fontFamily: "Virgil" }}>
+      <div className="flex flex-col h-full justify-between">
+        <div>
+          <div className="flex flex-row items-end justify-between w-full">
+            <p className="text-2xl mx-1">Tiramisu</p>
+            <p className="pb-1 mr-1">{`v ${manifestData.version}`}</p>
+          </div>
+          <div className="w-full h-1 bg-stone-400"></div>
+          <p className="text-sm mt-2">
+            Chrome extension for supporting Korean and Japanese fonts to
+            Excalidraw
+          </p>
+        </div>
+        <div className="">
+          {buttonState ? (
+            <PulseLogoButton onClick={toggleHandler} />
+          ) : (
+            <GrayLogoButton onClick={toggleHandler} />
+          )}
+        </div>
+        <div className="flex flex-row justify-between w-full text-sm items-center">
+          <p>kuskhan@gmail.com</p>
+          <button
+            className="bg-stone-400 px-3 py-1 rounded-xl text-slate-50 shadow-md"
+            onClick={() => setShowQR(true)}>
+            Buy Me a Tiramisu
+          </button>
+        </div>
+      </div>
+      {showQR && (
+        <button onClick={() => setShowQR(false)}>
+          <div className="absolute w-full h-full top-0 left-0 flex items-center justify-center bg-black bg-opacity-50">
+            <img
+              src={kpay}
+              alt="qr code for kakaopay"
+              width="250"
+              height="250"
+            />
+          </div>
+        </button>
+      )}
     </div>
   )
 }
