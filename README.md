@@ -1,6 +1,23 @@
-This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
+# Tiramisu
+### Chrome extension for supporting Korean and Japanese fonts to Excalidraw
+> **This extension is NOT an official support from Excalidraw. Use it at your own risk.**
 
-## Getting Started
+## Fonts
+- English: default [Virgil](https://virgil.excalidraw.com/) font from [excalidraw.com](https://excalidraw.com/)
+- Korean: [나눔손글씨 예쁜 민경체 / Namum Ye Bbeun Min Gyeong Ce](https://clova.ai/handwriting/)
+- Japanese: [かずフォント / Kazu font](https://www.freejapanesefont.com/kazu-handwriting-font-download/)
+
+## Powered by
+<a href="https://www.plasmo.com/">
+<img src="https://pbs.twimg.com/profile_images/1524776891084857344/qy9E4xIa_400x400.jpg" alt="Plasmo" width="64px" height="64px" />
+</a>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="64px" height="64px" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="TailwindCSS" width="64px" height="64px"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="64px" height="64px"/>
+          
+<hr />
+
+## Development
 
 First, run the development server:
 
@@ -27,7 +44,3 @@ npm run build
 ```
 
 This should create a production bundle for your extension, ready to be zipped and published to the stores.
-
-## Submit to the webstores
-
-The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/framework/workflows/submit) and you should be on your way for automated submission!

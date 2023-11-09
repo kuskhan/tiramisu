@@ -2,7 +2,7 @@
   "name": "tiramisu",
   "displayName": "Tiramisu",
   "version": "0.0.1",
-  "description": "Chrome extension for suporting Korean font to Excalidraw",
+  "description": "Chrome extension for supporting Korean and Japanese fonts to Excalidraw",
   "author": "Jung W. Park (kuskhan@gmail.com)",
   "scripts": {
     "dev": "plasmo dev",
