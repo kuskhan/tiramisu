@@ -34,6 +34,7 @@ const PlasmoOverlay = () => {
     chrome.runtime.onMessage.addListener(
       function (request, sender, sendMessage) {
         if (request.message === "refresh") {
+          // document.location.reload()
           window.location.reload()
         }
       }
