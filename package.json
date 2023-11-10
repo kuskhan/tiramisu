@@ -29,7 +29,7 @@
     "host_permissions": [
       "https://*/*"
     ],
-    "permissions": [ "scripting", "activeTab", "storage" ],
+    "permissions": [ "activeTab", "storage" ],
     "web_accessible_resources": [
       {
         "resources": [
