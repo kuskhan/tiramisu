@@ -8,13 +8,14 @@
 - Japanese: [かずフォント / Kazu font](https://www.freejapanesefont.com/kazu-handwriting-font-download/)
 
 ## Powered by
-<a href="https://www.plasmo.com/">
-<img src="https://pbs.twimg.com/profile_images/1524776891084857344/qy9E4xIa_400x400.jpg" alt="Plasmo" width="64px" height="64px" />
-</a>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="64px" height="64px" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="TailwindCSS" width="64px" height="64px"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="64px" height="64px"/>
-          
+<div style="display: inline-flex; gap: 20px;">
+    <a href="https://www.plasmo.com/">
+        <img src="https://pbs.twimg.com/profile_images/1524776891084857344/qy9E4xIa_400x400.jpg" alt="Plasmo" width="64px" height="64px" />
+    </a>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="64px" height="64px" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="TailwindCSS" width="64px" height="64px"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="64px" height="64px"/>
+</div>     
 <hr />
 
 ## Development
