@@ -27,7 +27,7 @@
   },
   "manifest": {
     "host_permissions": [
-      "https://*/*"
+      "https://excalidraw.com/*"
     ],
     "permissions": [ "activeTab", "storage" ],
     "web_accessible_resources": [
