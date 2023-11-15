@@ -1,6 +1,6 @@
 # Tiramisu
 ### Chrome extension for supporting Korean and Japanese fonts to Excalidraw
-> **This extension is NOT an official support from Excalidraw. Use it at your own risk.**
+> **This extension is NOT official support from Excalidraw. Use it at your own risk.**
 
 ## Fonts
 - English: default [Virgil](https://virgil.excalidraw.com/) font from [excalidraw.com](https://excalidraw.com/)
