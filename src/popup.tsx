@@ -1,16 +1,16 @@
 import "~style.css"
 import "~font.css"
 
-import * as process from "process"
-import kpay from "data-base64:~assets/kakao_pay.png"
+import coffeeBtnImg from "data-base64:~assets/coffee_btn.png"
 import { useEffect, useState } from "react"
 
 import GrayLogoButton from "~components/GrayLogoButton"
 import PulseLogoButton from "~components/PulseLogoButton"
+import { BUY_ME_A_COFFEE_URL } from "~lib/globalVars"
 
 function IndexPopup() {
   const [buttonState, setButtonState] = useState(false)
-  const [showQR, setShowQR] = useState(false)
+  // const [showQR, setShowQR] = useState(false)
   const toggleHandler = async () => {
     setButtonState(!buttonState)
     await chrome.storage.local.set({ switch: !buttonState })
@@ -53,25 +53,16 @@ function IndexPopup() {
         </div>
         <div className="flex flex-row justify-between w-full text-xs items-center">
           <p>kuskhan@gmail.com</p>
+
           <button
-            className="bg-stone-400 px-4 py-1 rounded-xl text-slate-50 shadow-md text-xs"
-            onClick={() => setShowQR(true)}>
-            Buy Me a Tiramisu
+            className="bg-stone-400 px-4 py-1 rounded-xl text-slate-50 text-xs"
+            onClick={() =>
+              window.open(BUY_ME_A_COFFEE_URL, "_blank", "noopener,noreferrer")
+            }>
+            <img src={coffeeBtnImg} alt="Buy me a Tiramisu" width="130px" />
           </button>
         </div>
       </div>
-      {showQR && (
-        <button onClick={() => setShowQR(false)}>
-          <div className="absolute w-full h-full top-0 left-0 flex items-center justify-center bg-black bg-opacity-50">
-            <img
-              src={kpay}
-              alt="qr code for kakaopay"
-              width="250"
-              height="250"
-            />
-          </div>
-        </button>
-      )}
     </div>
   )
 }
